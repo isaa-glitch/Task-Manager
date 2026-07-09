@@ -1,5 +1,5 @@
-const Task = require("../Model/taskModel");
-const Auth = require("../Model/authModel");
+const Task = require("../model/taskModel");
+const Auth = require("../model/authModel");
 const { sendTaskEmail } = require("../utils/emailHelper");
 const { uploadImage } = require("../utils/cloudinary");
 const googleTTS = require("google-tts-api");

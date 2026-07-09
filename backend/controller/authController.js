@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const { sendTaskEmail } = require("../utils/emailHelper"); 
 const {uploadImage} = require("../utils/cloudinary")
 const os = require("os");
-const OsLoginInfo = require("../Model/osModel");
+const OsLoginInfo = require("../model/osModel");
 
 const secretKey = "my_super_secret_key_123";
 
