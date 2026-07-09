@@ -82,7 +82,7 @@ const startAdminReportCron = () => {
       }
     },
     {
-      timezone: "Asia/Kolkata",Time
+      timezone: "Asia/Kolkata"
     },
   );
 };
