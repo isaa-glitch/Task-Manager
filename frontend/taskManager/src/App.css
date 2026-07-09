@@ -1,0 +1,802 @@
+
+/* 
+/* ═══════════════════════════════════════════════════════════════
+   dashboard.css
+   Import once in main.jsx or App.jsx:  import "./dashboard.css"
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── LIGHT THEME ─────────────────────────────────────────────── */
+/* .db-root.light {
+  --db-bg: #f8f9fc;
+  --db-surface: #ffffff;
+  --db-surface2: #f1f3f8;
+  --db-border: #e2e6ef;
+  --db-text: #374151;
+  --db-text-muted: #6b7280;
+  --db-text-strong: #111827;
+  --db-accent: #6366f1;
+  --db-accent-h: #4f46e5;
+  --db-accent-soft: rgba(99, 102, 241, 0.1);
+  --db-danger: #ef4444;
+  --db-danger-soft: rgba(239, 68, 68, 0.1);
+  --db-warn: #f59e0b;
+  --db-warn-soft: rgba(245, 158, 11, 0.1);
+  --db-success: #10b981;
+  --db-success-soft: rgba(16, 185, 129, 0.1);
+  --db-shadow: 0 1px 3px rgba(0, 0, 0, .07), 0 4px 12px rgba(0, 0, 0, .05);
+
+  background-color: var(--db-bg);
+  color: var(--db-text);
+}
+
+/* ── DARK THEME ──────────────────────────────────────────────── */
+/* .db-root.dark {
+  --db-bg: #0f1117;
+  --db-surface: #1a1d27;
+  --db-surface2: #222534;
+  --db-border: #2e3245;
+  --db-text: #c9cde0;
+  --db-text-muted: #7b82a0;
+  --db-text-strong: #e8eaf6;
+  --db-accent: #818cf8;
+  --db-accent-h: #6366f1;
+  --db-accent-soft: rgba(129, 140, 248, 0.12);
+  --db-danger: #f87171;
+  --db-danger-soft: rgba(248, 113, 113, 0.12);
+  --db-warn: #fbbf24;
+  --db-warn-soft: rgba(251, 191, 36, 0.12);
+  --db-success: #34d399;
+  --db-success-soft: rgba(52, 211, 153, 0.12);
+  --db-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 6px 16px rgba(0, 0, 0, .2);
+
+  background-color: var(--db-bg);
+  color: var(--db-text);
+} */ */
+
+/* ── SHARED ROOT ─────────────────────────────────────────────── */
+/* .db-root {
+  min-height: 100vh;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.2s, color 0.2s;
+} */ */
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+
+
+
+
+
+.db-btn {
+  padding: 7px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.db-btn:active {
+  transform: scale(0.97);
+}
+
+/* ghost */
+.db-btn-ghost {
+  background: var(--db-surface2);
+  color: var(--db-text);
+  border-color: var(--db-border);
+}
+
+.db-btn-ghost:hover {
+  background: var(--db-accent-soft);
+  color: var(--db-accent);
+  border-color: var(--db-accent);
+}
+
+/* primary */
+.db-btn-primary {
+  background: var(--db-accent);
+  color: #fff;
+  border-color: var(--db-accent);
+  font-weight: 600;
+}
+
+.db-btn-primary:hover {
+  background: var(--db-accent-h);
+  border-color: var(--db-accent-h);
+}
+
+/* danger */
+.db-btn-danger {
+  background: var(--db-danger-soft);
+  color: var(--db-danger);
+  border-color: var(--db-danger);
+}
+
+.db-btn-danger:hover {
+  background: var(--db-danger);
+  color: #fff;
+}
+
+/* warn */
+.db-btn-warn {
+  background: var(--db-warn-soft);
+  color: var(--db-warn);
+  border-color: var(--db-warn);
+}
+
+.db-btn-warn:hover {
+  background: var(--db-warn);
+  color: #fff;
+}
+
+/* tab buttons */
+.db-tab {
+  font-weight: 500;
+}
+
+.db-tab-active {
+  background: var(--db-accent) !important;
+  color: #fff !important;
+  border-color: var(--db-accent) !important;
+  font-weight: 600 !important;
+}
+
+/* ── INPUT / TEXTAREA / SELECT ───────────────────────────────── */
+.db-input {
+  padding: 9px 12px;
+  border: 1px solid var(--db-border);
+  border-radius: 7px;
+  background: var(--db-surface);
+  color: var(--db-text);
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+
+.db-input:focus {
+  border-color: var(--db-accent);
+  box-shadow: 0 0 0 3px var(--db-accent-soft);
+}
+
+.db-input::placeholder {
+  color: var(--db-text-muted);
+}
+
+.db-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.db-search {
+  background: var(--db-surface2);
+}
+
+/* ── LABEL ───────────────────────────────────────────────────── */
+.db-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--db-text-muted);
+  margin-bottom: 5px;
+}
+
+/* ── CARD ────────────────────────────────────────────────────── */
+.db-card {
+  border: 1px solid var(--db-border);
+  box-shadow: var(--db-shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.db-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.db-card-archived {
+  border-style: dashed;
+  opacity: 0.88;
+}
+
+.db-card-meta {
+  border-top: 1px solid var(--db-border);
+}
+
+/* ── STATUS BADGES ───────────────────────────────────────────── */
+.db-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  border: 1px solid transparent;
+}
+
+.db-badge-completed {
+  background: var(--db-success-soft);
+  color: var(--db-success);
+  border-color: var(--db-success);
+}
+
+.db-badge-in-progress {
+  background: var(--db-accent-soft);
+  color: var(--db-accent);
+  border-color: var(--db-accent);
+}
+
+.db-badge-pending {
+  background: var(--db-warn-soft);
+  color: var(--db-warn);
+  border-color: var(--db-warn);
+}
+
+/* ── TABLE ───────────────────────────────────────────────────── */
+.db-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--db-border);
+  border-radius: 10px;
+  box-shadow: var(--db-shadow);
+  background: var(--db-surface);
+}
+
+.db-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.db-table thead tr {
+  border-bottom: 2px solid var(--db-border);
+}
+
+.db-table th {
+  padding: 12px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--db-text-muted);
+  text-align: left;
+  background: var(--db-surface2);
+}
+
+.db-table td {
+  color: var(--db-text);
+  border-bottom: 1px solid var(--db-border);
+  vertical-align: middle;
+}
+
+.db-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.db-table tbody tr:hover td {
+  background: var(--db-accent-soft);
+}
+
+/* ── MODAL ───────────────────────────────────────────────────── */
+.db-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.db-modal {
+  background: var(--db-surface);
+  border: 1px solid var(--db-border);
+  border-radius: 14px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.db-modal h3 {
+  margin: 0 0 20px;
+  font-size: 17px;
+  color: var(--db-text-strong);
+}
+
+/* ── OWNER TAG (hidden page) ─────────────────────────────────── */
+.db-owner-tag {
+  color: var(--db-accent) !important;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* make the full page background respond to theme */
+.db-root.light {
+  background-color: #f8f9fc;
+}
+
+.db-root.dark {
+  background-color: #0f1117;
+}
+
+/* override the body/root constraints from index.css */
+.db-root {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* ── GLOBAL SITE OVERRIDES ──────────────────────────────────── */
+/* Force html and body to stretch completely without native margins/paddings */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ── LIGHT THEME ────────────────────────────────────────────── */
+.db-root.light {
+  --db-bg: #f8f9fc;
+  --db-surface: #ffffff;
+  --db-surface2: #f1f3f8;
+  --db-border: #e2e6ef;
+  --db-text: #374151;
+  --db-text-muted: #6b7280;
+  --db-text-strong: #111827;
+  --db-accent: #6366f1;
+  --db-accent-h: #4f46e5;
+  --db-accent-soft: rgba(99, 102, 241, 0.1);
+  --db-danger: #ef4444;
+  --db-danger-soft: rgba(239, 68, 68, 0.1);
+  --db-warn: #f59e0b;
+  --db-warn-soft: rgba(245, 158, 11, 0.1);
+  --db-success: #10b981;
+  --db-success-soft: rgba(16, 185, 129, 0.1);
+  --db-shadow: 0 1px 3px rgba(0, 0, 0, .07), 0 4px 12px rgba(0, 0, 0, .05);
+}
+
+/* ── DARK THEME ──────────────────────────────────────────────── */
+.db-root.dark {
+  --db-bg: #0f1117;
+  --db-surface: #1a1d27;
+  --db-surface2: #222534;
+  --db-border: #2e3245;
+  --db-text: #c9cde0;
+  --db-text-muted: #7b82a0;
+  --db-text-strong: #e8eaf6;
+  --db-accent: #818cf8;
+  --db-accent-h: #6366f1;
+  --db-accent-soft: rgba(129, 140, 248, 0.12);
+  --db-danger: #f87171;
+  --db-danger-soft: rgba(248, 113, 113, 0.12);
+  --db-warn: #fbbf24;
+  --db-warn-soft: rgba(251, 191, 36, 0.12);
+  --db-success: #34d399;
+  --db-success-soft: rgba(52, 211, 153, 0.12);
+  --db-shadow: 0 1px 4px rgba(0, 0, 0, .3), 0 6px 16px rgba(0, 0, 0, .2);
+}
+
+/* ── SHARED ROOT (STRETCHED TO VIEWPORT) ─────────────────────── */
+.db-root {
+  min-height: 100vh;
+  width: 100vw;
+  /* Force full viewport width */
+  margin: 0;
+  padding: 24px;
+  /* Adds cleaner breathing room for dashboard content inside */
+  box-sizing: border-box;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--db-bg);
+  color: var(--db-text);
+  transition: background-color 0.2s, color 0.2s;
+
+  /* Overrides typical framework layout centers (like Vite/CRA defaults) */
+  max-width: 100% !important;
+  text-align: left;
+}
+
+/* ── SHARED ROOT ─────────────────────────────────────────────── */
+.db-root {
+  min-height: 100vh;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.2s, color 0.2s;
+
+  /* 1. Add fallback colors here so it's never blank on login */
+  --db-bg: #f8f9fc;
+  --db-surface: #ffffff;
+  --db-surface2: #f1f3f8;
+  --db-border: #e2e6ef;
+  --db-text: #374151;
+  --db-text-muted: #6b7280;
+  --db-text-strong: #111827;
+  --db-accent: #6366f1;
+  --db-accent-h: #4f46e5;
+  --db-accent-soft: rgba(99, 102, 241, 0.1);
+  --db-danger: #ef4444;
+  --db-danger-soft: rgba(239, 68, 68, 0.1);
+  --db-warn: #f59e0b;
+  --db-warn-soft: rgba(245, 158, 11, 0.1);
+  --db-success: #10b981;
+  --db-success-soft: rgba(16, 185, 129, 0.1);
+  --db-shadow: 0 1px 3px rgba(0, 0, 0, .07), 0 4px 12px rgba(0, 0, 0, .05);
+
+  background-color: var(--db-bg);
+  color: var(--db-text);
+}
+
+
+
+
+
+/* --- PROFILE DROPDOWN STYLES --- */
+.pd-container {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-family: inherit;
+}
+
+/* Main Profile Toggle Button */
+.pd-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #1e293b;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pd-toggle-btn:hover {
+  background-color: #334155;
+}
+
+.pd-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #e2e8f0;
+}
+
+.pd-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* The Dropdown Menu Panel */
+.pd-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 12px;
+  width: 280px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+  z-index: 50;
+}
+
+/* Section Headers */
+.pd-section {
+  background-color: #f8fafc;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  border-top: 1px solid #f3f4f6;
+}
+
+.pd-section:first-child {
+  border-top: none;
+}
+
+.pd-section p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Action Buttons (Table Row Layout) */
+.pd-action-btn {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f8fafc;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pd-action-btn:last-child {
+  border-bottom: none;
+}
+
+.pd-action-btn:hover {
+  background-color: #f8fafc;
+}
+
+/* Hover Animations inside Buttons */
+.pd-emoji {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.pd-action-btn:hover .pd-emoji {
+  transform: scale(1.1);
+}
+
+.pd-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.pd-arrow {
+  color: #cbd5e1;
+  transition: color 0.2s;
+}
+
+.pd-action-btn:hover .pd-arrow {
+  color: #64748b;
+}
+
+/* Badges (Light/Dark, Card/Table) */
+.pd-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  background-color: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Specific Logout Red Styles */
+.pd-logout-btn {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pd-logout-btn:hover {
+  background-color: #fef2f2;
+}
+
+.pd-logout-btn:hover .pd-emoji {
+  transform: scale(1.1);
+}
+
+.pd-logout-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #dc2626;
+}
+
+
+
+/* --- LOGIN INFO PAGE STYLES --- */
+.li-container {
+  min-height: 100vh;
+  padding: 32px;
+  background-color: #f9fafb;
+  /* Light mode bg */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: inherit;
+}
+
+/* Dark Mode Background */
+.li-container.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.li-card {
+  max-width: 768px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.li-container.dark .li-card {
+  background-color: #1e293b;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.li-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.li-container.dark .li-header {
+  border-bottom-color: #334155;
+}
+
+.li-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.li-container.dark .li-title {
+  color: #f1f5f9;
+}
+
+.li-back-btn {
+  padding: 8px 16px;
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.li-back-btn:hover {
+  background-color: #d1d5db;
+}
+
+.li-container.dark .li-back-btn {
+  background-color: #334155;
+  color: #f1f5f9;
+}
+
+.li-container.dark .li-back-btn:hover {
+  background-color: #475569;
+}
+
+.li-message {
+  text-align: center;
+  color: #6b7280;
+  padding: 40px 0;
+}
+
+.li-container.dark .li-message {
+  color: #94a3b8;
+}
+
+.li-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.li-item {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.li-container.dark .li-item {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+/* Highlight for the most recent login */
+.li-item-recent {
+  border-left: 4px solid #14b8a6;
+  background-color: #f0fdfa;
+}
+
+.li-container.dark .li-item-recent {
+  border-left: 4px solid #0d9488;
+  background-color: #134e4a;
+  /* Dark teal background */
+}
+
+.li-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.li-item-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.li-container.dark .li-item-title {
+  color: #f1f5f9;
+}
+
+.li-item-time {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.li-container.dark .li-item-time {
+  color: #94a3b8;
+}
+
+.li-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 8px;
+}
+
+.li-container.dark .li-grid {
+  color: #cbd5e1;
+}
+
+.li-grid p {
+  margin: 0;
+}
+
+.li-grid-full {
+  grid-column: span 2;
+}
+
+.li-font-semibold {
+  font-weight: 600;
+}
+
+.li-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  background-color: #ccfbf1;
+  color: #115e59;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 9999px;
+}
+
+.li-container.dark .li-badge {
+  background-color: #0f766e;
+  color: #ccfbf1;
+}
