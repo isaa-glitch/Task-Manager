@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const cron = require("node-cron");
-const Task = require("../Model/taskModel"); 
-const User = require("../Model/authModel"); 
+const Task = require("../model/taskModel"); 
+const User = require("../model/authModel"); 
 
 const transport = nodemailer.createTransport({
   service: "gmail",
